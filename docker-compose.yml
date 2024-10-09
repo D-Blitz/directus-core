@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - 8055:8055
+    volumes:
+      - ./directus-database:/directus/database
+      - ./directus-uploads:/directus/uploads
+      - ./directus-extensions:/directus/extensions
+    environment:
+      ADMIN_EMAIL: "alexandrepeyratoux@orange.fr"
+      ADMIN_PASSWORD: "Basilicum2024"
+      SECRET: "tQvZrdJy0F5m4hjfeTGno7IU2SixPuzY"
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "*"
+      CORS_HEADERS: "Content-Type, Authorization"
